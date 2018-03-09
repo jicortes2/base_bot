@@ -1,7 +1,7 @@
 import db
 from random import choice
 
-
+TOKEN = str(db.os.environ['TOKEN'])
 # Public commands
 
 def start(sender_id, command):
