@@ -5,7 +5,7 @@ TOKEN = str(db.os.environ['TOKEN'])
 # Public commands
 
 def start(sender_id, command):
-    return "IdeaBot a su servicio"
+    return "SplitBot a su servicio"
 
 # Auxiliary methods
 
