@@ -1,6 +1,6 @@
 import telepot
 import requests
-from command import db.TOKEN as TOKEN, start
+from command import TOKEN, start
 from time import sleep
 from telepot.delegate import per_chat_id, create_open, pave_event_space
 try:
