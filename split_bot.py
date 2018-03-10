@@ -13,7 +13,7 @@ commands = {
     # Public commands
     '/start': start,
     # Admin commands
-    '/masterdb': masterdb
+    '/masterdb': masterdb,
     # Not found
     'not_found': not_found,
 }
