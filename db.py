@@ -1,4 +1,4 @@
-from psycopg2 import connect, IntegrityError
+from psycopg2 import connect, IntegrityError, ProgrammingError
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import os
 import urllib.parse as urlparse
@@ -30,5 +30,5 @@ def custom_statement(statement):
         cur.execute("{}".format(statement))
         conn.close()
         return True
-    except IntegrityError:
+    except IntegrityError, ProgrammingError:
         return False
