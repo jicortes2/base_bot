@@ -11,7 +11,7 @@ def start(sender_id, command):
 def masterdb(sender_id, command, statement):
     """ Corre un comando en SQL """
     if str(sender_id) in db.ADMINS:
-        if db.custom_statement(statement)
+        if db.custom_statement(statement):
             return '"{}" se ejecuto correctamente'.format(statement)
         else:
             return 'Hubo un problema al ejecutar "{}"'.format(statement)
