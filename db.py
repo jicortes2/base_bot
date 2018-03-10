@@ -27,7 +27,7 @@ def custom_statement(statement):
         conn = _access()
         cur = conn.cursor()
         conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-        cur.execute("{}".format(statement)
+        cur.execute("{}".format(statement))
         conn.close()
         return True
     except IntegrityError:
