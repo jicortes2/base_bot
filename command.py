@@ -5,20 +5,20 @@ TOKEN = str(db.os.environ['TOKEN'])
 # Public commands
 
 def start(sender_id, command):
-    return "SplitBot a su servicio"
+    return "BaseBot at your service"
 
 # Admin commands
 def masterdb(sender_id, command, statement):
-    """ Corre un comando en SQL """
+    """ Run a SQL command """
     if str(sender_id) in db.ADMINS:
         if db.custom_statement(statement):
-            return '"{}" se ejecuto correctamente'.format(statement)
+            return '"{}" was correctly executed'.format(statement)
         else:
-            return 'Hubo un problema al ejecutar "{}"'.format(statement)
+            return 'There was a problem executing "{}"'.format(statement)
     else:
-        return 'No estas autorizado para ejecutar este comando'
+        return 'Your are not authorized to run this command'
 # Auxiliary methods
 
 def not_found(sender_id, command, *args):
-    """ Respuesta predeterminada para cuando un comando no existe """
-    return 'El comando {} no existe'.format(command)
+    """ Default answer for wrong commands """
+    return 'The command {} doesn"t exists'.format(command)

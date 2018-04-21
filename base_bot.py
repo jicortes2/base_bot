@@ -19,9 +19,9 @@ commands = {
 }
 
 
-class Split(telepot.helper.ChatHandler):
+class Base(telepot.helper.ChatHandler):
     def __init__(self, *args, **kwargs):
-        super(Split, self).__init__(*args, **kwargs)
+        super(Base, self).__init__(*args, **kwargs)
 
 
     def on_chat_message(self, msg):
@@ -29,14 +29,14 @@ class Split(telepot.helper.ChatHandler):
         user_id = msg["from"]["id"]
 
         if False:
-            # Cambiar para debuggear o saber el type de algo
-            # Recuerda cambiar el setting de privacy mode
+            # Change for debugging or getting a type
+            # Remember to change settings to privacy mode
             self.find_message_type(msg, chat_id)
 
         text = msg['text']
         if not text.startswith("/"):
             return
-        args = text.replace('@SplitDebtsBot', '').split(' ', 1)
+        args = text.replace('@<Name_Bot>', '').split(' ', 1)
         func = commands.get(args[0], commands['not_found'])
         print(args)
         answer = func(user_id, *args)
@@ -47,6 +47,6 @@ UPDATE_QUEUE = Queue()  # channel between `app` and `bot`
 
 BOT = telepot.DelegatorBot(TOKEN, [
     pave_event_space()(
-        per_chat_id(), create_open, Split, timeout=10),
+        per_chat_id(), create_open, Base, timeout=10),
 ])
 BOT.message_loop(source=UPDATE_QUEUE)  # take updates from queue

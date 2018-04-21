@@ -2,9 +2,9 @@ from flask import Flask, request
 
 from os import environ
 from time import sleep
-from split_bot import BOT, UPDATE_QUEUE, TOKEN
+from base_bot import BOT, UPDATE_QUEUE, TOKEN
 
-URL = "https://split-bot.herokuapp.com/{}".format(TOKEN)
+URL = "https://<HEROKU_APP_NAME>.herokuapp.com/{}".format(TOKEN)
 
 PORT = int(environ.get("PORT", 5000))
 app = Flask(__name__)

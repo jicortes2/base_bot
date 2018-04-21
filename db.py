@@ -7,7 +7,7 @@ import urllib.parse as urlparse
 tables:
 """
 
-ADMINS = [str(os.environ['JUAN_ID']), str(os.environ['CRIS_ID'])]
+ADMINS = [str(os.environ['ADMIN_ID'])]
 TOKEN = str(os.environ['TOKEN'])
 
 def _access(option=True):
