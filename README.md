@@ -9,7 +9,7 @@ heroku config:set TOKEN=<YOUR_TOKEN>
 ```
 With this, you are ready to start your own bot. You can also add environment variables on the dashboard of your app (Settings > Config variables)
 
-#### Adding Postgres :elephant:
+#### Adding Postgres :elephant:
 
 ```
 heroku addons:create heroku-postgresql
