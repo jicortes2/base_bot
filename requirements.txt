@@ -1,4 +1,4 @@
 telepot==10.5
 Flask==1.0
 psycopg2==2.7.1
-requests==2.9.1
+requests==2.20.0
